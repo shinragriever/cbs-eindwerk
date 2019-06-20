@@ -28,26 +28,8 @@ Route::get('/genre/{id}','Front@genre')->name('genre');
 Route::get('/contact', 'Front@contact')->name('contact');
 Route::get('/about', 'Front@about')->name('about');
 
-
-
-// Payment system
-
-
-
 Auth::routes();
-//  Route::get('/admin','AdminController@index')->name('admin');
- 
-// Route::group(['middleware'=>'auth','prefix' => 'admin'],function(){
-//     Route::group(['middleware'=>'isAdmin'], function(){
-//             Route::resource('users','AdminUserController');
-//             Route::resource('authors','AuthorController');
-//             Route::resource('series','SerieController');
-//             Route::resource('comics','ComicController');
-//             Route::resource('genres','GenreController');
-//             Route::resource('publishers','PublisherController');
-//             Route::resource('roles','RoleController');
-//     });
-// });
+
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('/profile/{id}', 'Front@profile')->name('profile');

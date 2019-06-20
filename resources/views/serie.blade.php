@@ -56,9 +56,18 @@
 
 										<div class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
-											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+											{{-- <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 												Add to Cart
+											</button> --}}
+											<form action="{{url('cart')}}" method="post">
+												<input type="hidden" name="comic_id" value="{{$comic->id}}">
+												<input type="hidden" name="_token" value="{{csrf_token()}}">
+			
+												<button type="submit" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 cart">
+												<i class="fa fa-shopping-cart"></i>
+												<span class="pl-1 pt-1">Add to cart</span>
 											</button>
+											</form>
 										</div>
 									</div>
 								</div>
